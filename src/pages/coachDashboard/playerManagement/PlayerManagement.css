@@ -1,0 +1,600 @@
+/* src/components/PlayerManagement/PlayerManagement.css */
+
+/* Global body */
+body {
+  /* background: linear-gradient(120deg, #fdfbfb 0%, #39bcfd 50%); */
+  background-attachment: fixed;
+  background-color: #2c2c2c;
+  color: #2c2c2c;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  
+}
+
+/* Main container */
+.management-container {
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap; /* allow stacking on smaller screens */
+  gap: 0;
+  padding-top: 0px;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  justify-content: center;
+  
+  align-items: flex-start;
+}
+
+/* Each section (roster / lineup) */
+.management-section {
+  border-radius: 0px;
+  padding: 30px;
+  min-height: 100vh;
+  flex: 1 1 400px; /* responsive width, minimum 400px */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Section title */
+.section-title {
+  color: var(--primary);
+  font-size: 2rem;
+  margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Form styling */
+.add-player-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow);
+  
+}
+
+.add-player-form h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.add-player-form input,
+.add-player-form select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #333;
+  font-size: 1rem;
+}
+
+.add-player-form input::placeholder {
+  color: #777;
+}
+
+.add-player-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color:  var(--primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.6s;
+  transition: ease 0.2s;
+}
+
+.add-player-form button:hover {
+  transform: translateY(-2px);
+}
+
+/* Player cards grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* responsive cards */
+  gap: 20px;
+  width: 100%;
+}
+
+/* Roster Groups - Position-based organization */
+.roster-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.position-group {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow);
+}
+
+.position-group-title {
+  color: #0b63d8;
+  font-size: 1.4rem;
+  margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(11, 99, 216, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Position-specific styling for group titles */
+.position-group:nth-child(1) .position-group-title {
+  color: #ef4444;
+  border-bottom-color: rgba(239, 68, 68, 0.3);
+}
+
+.position-group:nth-child(2) .position-group-title {
+  color: #f59e0b;
+  border-bottom-color: rgba(245, 158, 11, 0.3);
+}
+
+.position-group:nth-child(3) .position-group-title {
+  color: #10b981;
+  border-bottom-color: rgba(16, 185, 129, 0.3);
+}
+
+.position-group:nth-child(4) .position-group-title {
+  color: #8b5cf6;
+  border-bottom-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Position group icons */
+.position-group-title::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.position-group:nth-child(1) .position-group-title::before {
+  background: #ef4444;
+  content: '🥅';
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.position-group:nth-child(2) .position-group-title::before {
+  background: #f59e0b;
+  content: '🛡️';
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.position-group:nth-child(3) .position-group-title::before {
+  background: #10b981;
+  content: '⚽';
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.position-group:nth-child(4) .position-group-title::before {
+  background: #8b5cf6;
+  content: '⚡';
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Enhanced form styling for better position selection */
+.add-player-form select optgroup {
+  font-weight: bold;
+  color: #0b63d8;
+  background: rgba(11, 99, 216, 0.1);
+}
+
+.add-player-form select option {
+  padding: 8px;
+  color: #333;
+}
+
+.add-player-form select optgroup option {
+  padding-left: 20px;
+  font-weight: normal;
+}
+
+/* Individual card */
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  aspect-ratio: 280 / 250;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Lineup section */
+.lineup-section {
+ 
+  
+  min-height: 100vh;
+  
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+
+/* Empty message */
+.empty-message {
+  color: #555;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .management-container {
+    gap: 20px;
+    padding: 20px;
+  }
+  .management-section {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Soccer Field Layout for Lineup */
+.soccer-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.field-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
+  border: 3px solid #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+
+/* Field markings */
+.field-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 49px,
+    rgba(255, 255, 255, 0.1) 49px,
+    rgba(255, 255, 255, 0.1) 50px
+  );
+}
+
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+
+.center-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.penalty-area-left {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 20%;
+  height: 60%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-right: none;
+}
+
+.penalty-area-right {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  width: 20%;
+  height: 60%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-left: none;
+}
+
+.goal-area-left {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 8%;
+  height: 30%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-right: none;
+}
+
+.goal-area-right {
+  position: absolute;
+  top: 35%;
+  right: 0;
+  width: 8%;
+  height: 30%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-left: none;
+}
+
+/* Draggable players */
+.draggable-player {
+  position: absolute;
+  transition: none;
+  z-index: 10;
+}
+
+.draggable-player.dragging {
+  z-index: 1000;
+  transition: none;
+}
+
+.draggable-player .player-marker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #0b63d8;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: grab;
+  user-select: none;
+}
+
+.draggable-player.dragging .player-marker {
+  cursor: grabbing;
+  transform: scale(1.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.draggable-player .player-marker:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.draggable-player.dragging .player-marker:hover {
+  transform: scale(1.1);
+}
+
+.jersey-number {
+  font-weight: bold;
+  font-size: 14px;
+  color: #0b63d8;
+  line-height: 1;
+}
+
+.player-name {
+  font-size: 8px;
+  color: #333;
+  text-align: center;
+  line-height: 1;
+  margin-top: 2px;
+  max-width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.remove-player-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: #ef4444;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0;
+  z-index: 20;
+}
+
+.draggable-player:hover .remove-player-btn {
+  opacity: 1;
+}
+
+.remove-player-btn:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+/* Position-specific styling */
+.draggable-player.goalkeeper .player-marker {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.draggable-player.goalkeeper .jersey-number {
+  color: #ef4444;
+}
+
+.draggable-player.defender .player-marker {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.draggable-player.defender .jersey-number {
+  color: #f59e0b;
+}
+
+.draggable-player.midfielder .player-marker {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.draggable-player.midfielder .jersey-number {
+  color: #10b981;
+}
+
+.draggable-player.forward .player-marker {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.draggable-player.forward .jersey-number {
+  color: #8b5cf6;
+}
+
+/* Formation display */
+.formation-display {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formation-display h3 {
+  margin: 0 0 5px 0;
+  color: #0b63d8;
+  font-size: 1.2rem;
+}
+
+.formation-display p {
+  margin: 0 0 5px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.drag-instruction {
+  color: #0b63d8 !important;
+  font-size: 0.8rem !important;
+  font-style: italic;
+  margin-top: 10px !important;
+}
+
+/* Field position indicators */
+.field-container::before {
+  content: 'GOAL';
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 5;
+}
+
+.field-container::after {
+  content: 'GOAL';
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 5;
+}
+
+/* Responsive adjustments for soccer field */
+@media (max-width: 768px) {
+  .field-container {
+    height: 400px;
+    max-width: 100%;
+  }
+  
+  .draggable-player .player-marker {
+    width: 50px;
+    height: 50px;
+    padding: 6px;
+  }
+  
+  .jersey-number {
+    font-size: 12px;
+  }
+  
+  .player-name {
+    font-size: 7px;
+    max-width: 40px;
+  }
+  
+  .remove-player-btn {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,198 @@
+/* src/components/PlayerManagement/PlayerStatsModal.css */
+:root {
+  --bg: #f4f9ff;
+  --card: #ffffff;
+  --primary: #0b63d8;
+  --muted: #64748b;
+  --shadow: 0 10px 30px rgba(2,6,23,0.06);
+}
+
+/* --- Modal Overlay & Content --- */
+.stats-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(6, 30, 70, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.stats-modal-content {
+  background: var(--bg);
+  width: 100%;
+  max-width: 700px;
+  border-radius: 16px;
+  padding: 24px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.modal-close-btn {
+  position: absolute; top: 15px; right: 15px; background: none; border: none;
+  font-size: 2rem; cursor: pointer; color: var(--muted);
+}
+
+/* --- Header --- */
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.player-avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--card);
+  box-shadow: var(--shadow);
+}
+.player-info h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #04203a;
+}
+.player-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.export-btn { margin-left: auto; }
+
+/* --- Key Stats --- */
+.key-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.key-stat-card {
+  text-align: center;
+  padding: 20px;
+}
+.key-stat-card .stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+.key-stat-card .stat-label {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* --- Chart --- */
+.chart-container {
+  padding: 20px;
+}
+.chart-container h3 {
+  margin: 0 0 20px;
+  font-size: 1.1rem;
+  color: #04203a;
+}
+
+/* --- Full Stats Table --- */
+.stats-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+}
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eef2f7;
+  font-size: 0.9rem;
+}
+.stat-key { color: var(--muted); }
+.stat-value { font-weight: 600; color: #04203a; }
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .modal-header { flex-direction: column; text-align: center; }
+  .export-btn { margin-left: 0; margin-top: 10px; }
+  .key-stats-grid { grid-template-columns: 1fr; }
+  .stats-table { grid-template-columns: 1fr; }
+}
+
+
+/* Additional CSS for StatsTable - Add to your existing PlayerStatsModal.css */
+
+.stats-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stats-section {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #e9ecef;
+}
+
+.stats-section-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #343a40;
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  font-weight: 500;
+  color: #495057;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #212529;
+  background: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 0.75rem;
+  }
+  
+  .stats-section-title {
+    font-size: 1rem;
+  }
+  
+  .stat-row {
+    padding: 0.4rem 0;
+  }
+  
+  .stat-value {
+    min-width: 50px;
+    font-size: 0.9rem;
+  }
+}

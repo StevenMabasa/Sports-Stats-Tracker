@@ -1,0 +1,56 @@
+.teams-section-header {
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.teams-section-header p {
+  color: var(--muted);
+}
+
+.rs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.rs-match {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-weight:300;
+  
+}
+
+.team-link {
+  font-weight: 800;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color:  var(--muted);
+  
+}
+
+.rs-btn.ghost {
+  font-size: 18px;
+  color: #ccc;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.rs-btn.ghost.favorited {
+  color: #ffd700;
+}
+
+.rs-btn.ghost:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

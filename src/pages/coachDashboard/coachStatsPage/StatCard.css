@@ -1,0 +1,65 @@
+.the-card {
+  position: relative; /* Needed for absolute positioning of gradient inside */
+  border: none;
+  
+  border-radius: 5px;
+  padding-top: 0;
+  flex: 100%;
+  min-height: 100px;
+  overflow: hidden; /* Ensure gradient doesn't spill outside */
+  @media (width>=40em){
+    flex: calc(48%);
+    }
+    @media (width>=60em){
+      flex: calc(18%);  
+    }
+}
+
+
+
+.the-card * {
+  position: relative;
+  z-index: 1; /* Ensure content appears above the gradient */
+}
+
+.the-card header {
+  padding: 10px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.4); 
+  border-bottom: 2px solid #fff; 
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+}
+
+
+.the-card section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding-top: 0;
+  height: 50%;
+  border-radius: 10px;
+  font-size: large;
+}
+
+/* Animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* Smooth transitions */
+* {
+  transition: all 0.5s ease-out;
+}

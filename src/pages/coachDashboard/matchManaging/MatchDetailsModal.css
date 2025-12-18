@@ -1,0 +1,314 @@
+/* MatchDetailsModal.css */
+
+/* Overlay */
+.mdm-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* Container */
+.mdm-container {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  color: white;
+}
+
+/* Close Button */
+.mdm-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: 2px solid var(--primary);
+  color:var(--primary);
+  font-size: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.mdm-close-btn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.mdm-close-btn:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Header */
+.mdm-header {
+  margin-bottom: 2rem;
+  padding-right: 3rem;
+}
+
+.mdm-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.mdm-subtitle {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+
+/* Notifications */
+.mdm-notifications {
+  margin-bottom: 1rem;
+}
+
+/* Saving Indicator */
+.mdm-saving-indicator {
+  background-color: #dbeafe;
+  color: var(--primary);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--primary);
+  font-size: 0.875rem;
+}
+
+/* Section */
+.mdm-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+   background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+.mdm-section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 1.5rem 0;
+}
+
+/* Player Select */
+.mdm-player-select-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.mdm-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.mdm-select {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9375rem;
+  color: var(--muted);
+  background-color: white;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.mdm-select:hover {
+  border-color: white;
+}
+
+.mdm-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Form */
+.mdm-stats-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Fieldset */
+.mdm-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mdm-legend {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+/* Advanced Stats Wrapper */
+.mdm-advanced-stats-wrapper {
+  margin-top: 1rem;
+}
+
+.mdm-advanced-stats-wrapper .mdm-legend {
+  display: block;
+}
+
+/* Form Grid */
+.mdm-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* Form Group */
+.mdm-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.mdm-checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mdm-checkbox-group .mdm-label {
+  margin-bottom: 0;
+}
+
+/* Input */
+.mdm-input {
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9375rem;
+  color: #1e293b;
+  background-color: white;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.mdm-input:hover {
+  border-color: white;
+}
+
+.mdm-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.mdm-input:disabled {
+  background-color: #f1f5f9;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* Checkbox */
+.mdm-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+.mdm-checkbox:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Submit Button */
+.mdm-submit-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.mdm-submit-btn:hover:not(:disabled) {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.mdm-submit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.mdm-submit-btn:disabled {
+  background-color: #cbd5e1;
+  border-color: #cbd5e1;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* Team Stats Form */
+.mdm-team-stats-form {
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .mdm-container {
+    padding: 1.5rem;
+  }
+
+  .mdm-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mdm-title {
+    font-size: 1.5rem;
+  }
+
+  .mdm-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Scrollbar Styling */
+.mdm-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mdm-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.mdm-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.mdm-container::-webkit-scrollbar-thumb:hover {
+  background: white;
+}

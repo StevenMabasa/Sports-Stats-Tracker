@@ -1,0 +1,197 @@
+.f1-teams-page {
+
+  min-height: 100vh;
+}
+
+
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--f1-red);
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: rgba(244, 244, 244, 0.7);
+  font-weight: 400;
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.f1-team-card {
+  position: relative;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.team-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+}
+
+.team-card-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.02) 10px,
+      rgba(255, 255, 255, 0.02) 20px
+    );
+  pointer-events: none;
+}
+
+.team-position {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 3;
+}
+
+.position-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.25);
+  font-style: italic;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.team-logo-container {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  width: 180px;
+  height: 180px;
+  z-index: 1;
+  opacity: 0.15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.f1-team-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(2) drop-shadow(0 0 30px rgba(255, 255, 255, 0.3));
+}
+
+.team-info {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.f1-team-name {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: white;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  line-height: 1.2;
+}
+
+.team-drivers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.driver-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.team-points-section {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.team-points {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.points-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  font-style: italic;
+}
+
+.points-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+}
+
+.team-accent-stripe {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  z-index: 3;
+}
+
+@media (max-width: 768px) {
+  .teams-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .team-card {
+    height: 260px;
+    padding: 1.5rem;
+  }
+
+  .f1-team-name {
+    font-size: 1.6rem;
+  }
+
+  .points-number {
+    font-size: 2.8rem;
+  }
+
+  .team-logo-container {
+    width: 140px;
+    height: 140px;
+  }
+}

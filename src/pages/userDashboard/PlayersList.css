@@ -1,0 +1,48 @@
+.players-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.players-header h3 {
+  margin: 0;
+}
+
+.players-header .subtitle {
+  color: var(--muted);
+}
+
+.rs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rs-player {
+  display: flex;
+  justify-content: space-between;
+  color:  var(--primary);
+  
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.rs-match:hover {
+  background: #f6fff6;
+}
+
+.rs-match .meta {
+  color: var(--muted);
+  font-size: 0.95em;
+  margin-top: 4px;
+}
+
+.rs-match .stats {
+  font-weight: 900;
+  min-width: 120px;
+  text-align: right;
+}

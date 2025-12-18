@@ -1,0 +1,29 @@
+/* Stats Cards */
+
+.rs-stats {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-bottom: 24px;
+}
+.app-title{
+  font-size:28px;
+  font-weight:400;
+  color:  #32CD32;
+  padding-top: 8px;
+  margin-bottom:8px;
+}
+.rs-card {
+  background: var(--card);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.rs-card h3 {
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 600;
+}

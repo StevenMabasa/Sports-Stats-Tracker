@@ -1,0 +1,38 @@
+.topbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-right: 1.2rem;
+}
+
+.topbar-input {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.topbar-profile-btn {
+  /* Uses .rs-btn.ghost styles */
+}
+.topbar-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background-color:red;
+  color:white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 5%;
+}
+
+
+
+.topbar-logout-btn img {
+  width: 16px;
+  height: 16px;
+}

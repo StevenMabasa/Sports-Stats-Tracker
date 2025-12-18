@@ -1,0 +1,37 @@
+.stats-form {
+  color: white;
+}
+
+.stats-form h5 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.stats-form label {
+  display: block;
+  font-size: 0.85rem;
+  color: #333;
+  margin-top: 0.4rem;
+}
+
+.stats-form input {
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.stats-form button {
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.stats-form button:hover {
+  background: #5f1c9b;
+}

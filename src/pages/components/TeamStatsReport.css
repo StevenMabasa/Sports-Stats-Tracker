@@ -1,0 +1,426 @@
+/* === Main Container - Full Page Fill === */
+.team-stats-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  color: #1f2937; /* dark neutral for light theme */
+  background: var(--bg);
+  font-family: 'Inter', sans-serif;
+}
+
+/* === Header - Card Style Layout === */
+.stats-header {
+  background: white;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+/* Main bar with gradient */
+.main-bar {
+  background: var(--headback);
+  padding: 2.5rem;
+  padding-left: 3rem;
+  padding-top:1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.team-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.menu-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.team-info h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: var(--text-inverse);
+  font-weight: 700;
+}
+
+.team-info p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
+  color: var(--text-inverse);
+  opacity: 0.9;
+}
+
+/* Header Controls */
+.header-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.player-selector {
+  min-width: 200px;
+}
+
+.player-dropdown {
+  padding: 0.625rem 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  color: var(--text-inverse);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.player-dropdown option {
+  background-color: #0e7490;
+  color: white;
+  padding: 8px;
+}
+
+.player-dropdown:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.player-dropdown:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.CoachBtn.export-btn {
+  padding: 0.625rem 1.25rem;
+  background: white;
+  color: var(--primary);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.CoachBtn.export-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.CoachBtn.export-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Info bar below main gradient bar */
+.info-bar {
+  background: #f0f9ff;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.info-label {
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Form Guide */
+.team-form-guide {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-bubble {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.form-bubble.form-w {
+  background-color: #10b981;
+}
+
+.form-bubble.form-l {
+  background-color: #ef4444;
+}
+
+.form-bubble.form-d {
+  background-color: #f59e0b;
+}
+
+/* Legacy form badge support (if still needed) */
+.form-badge {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.form-badge.W { background-color: #28a745; }
+.form-badge.L { background-color: #dc3545; }
+.form-badge.D { background-color: #ffc107; color: #000; }
+
+h2{
+  color: var(--primary);
+}
+
+/* === Team Performance Section === */
+.pef-sec h2,
+.rep-stats-sec h2 {
+  margin-bottom: 1rem;
+  padding-left: 5px;
+  color: var(--primary);
+}
+
+.pef-sec ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 5px;
+}
+
+/* === PDF Capture === */
+/* Keep minimal by default */
+.pdf-capture {
+  background: none;
+  padding: 0;
+  margin: 0.5rem;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* When exporting (toggle via pdf-mode) */
+.pdf-mode .pdf-capture {
+  background-color: #ffffff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+/* === Feedback Messages === */
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+
+.error {
+  color: #b30000;
+}
+
+/* === Filter by Date === */
+.filter-by-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  width: 95%;
+  max-width: 1200px;
+  padding: 10px;
+}
+
+.filter-by-date label {
+  color: #000000;
+  font-weight: 500;
+}
+
+
+.filter-by-date input[type="date"] {
+  padding: 6px 10px;
+  border: 1px solid #d4e6ff;
+  border-radius: 6px;
+  color: #000000;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  font-size: 0.9rem;
+}
+
+.filter-by-date input[type="date"]:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* === Charts Layout === */
+.gen-team-stats {
+  display: grid;
+  width: 100%;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 700px; 
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow);
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.att-team-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.def-att {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* === Responsive Design === */
+@media (max-width: 1200px) {
+  .main-bar {
+    flex-wrap: wrap;
+  }
+  
+  .header-controls {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .team-section {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .team-info h1 {
+    font-size: 1.5rem;
+  }
+  
+  .header-controls {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .player-selector {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .CoachBtn.export-btn {
+    width: 100%;
+  }
+  
+  .info-bar {
+    justify-content: center;
+    padding: 1rem 1.5rem;
+  }
+
+  .chart-container {
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    max-width: 100%;
+  }
+  
+  .gen-team-stats,
+  .att-team-stats,
+  .def-att {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-bar {
+    padding: 1rem;
+  }
+  
+  .team-info h1 {
+    font-size: 1.25rem;
+  }
+  
+  .team-info p {
+    font-size: 0.8rem;
+  }
+  
+  .info-bar {
+    padding: 0.75rem 1rem;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .player-dropdown {
+    font-size: 0.85rem;
+  }
+  
+  .filter-by-date{
+    flex-direction: column;
+  }
+}

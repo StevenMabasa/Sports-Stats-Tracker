@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`main.tsx > mounts App inside StrictMode at #root 1`] = `
+<UNDEFINED>
+  <default />
+</UNDEFINED>
+`;
